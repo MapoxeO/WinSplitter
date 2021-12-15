@@ -6,6 +6,8 @@ namespace MapoxeO {
 		public string FilePath { get; private set; } = null;
 
 		public BinarySplitter(string filePath) {
+			if (!File.Exists(filePath))
+				throw new Exception($"File in path {filePath} doesn't exist");
 			FilePath = filePath;
 		}
 
