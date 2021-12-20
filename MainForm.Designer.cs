@@ -37,8 +37,14 @@ namespace SplitterWin {
 			this.ChooseFilesButton = new System.Windows.Forms.Button();
 			this.UniteButton = new System.Windows.Forms.Button();
 			this.UniterLabel = new System.Windows.Forms.Label();
+			this.MainMenu = new System.Windows.Forms.MenuStrip();
+			this.MenuInfo = new System.Windows.Forms.ToolStripMenuItem();
+			this.MenuInfoItemGeneral = new System.Windows.Forms.ToolStripMenuItem();
+			this.MenuInfoItemSplitter = new System.Windows.Forms.ToolStripMenuItem();
+			this.MenuInfoItemUniter = new System.Windows.Forms.ToolStripMenuItem();
 			this.SplitterPanel.SuspendLayout();
 			this.UniterPanel.SuspendLayout();
+			this.MainMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// InSize
@@ -162,6 +168,50 @@ namespace SplitterWin {
 			this.UniterLabel.TabIndex = 7;
 			this.UniterLabel.Text = "Объединение";
 			// 
+			// MainMenu
+			// 
+			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuInfo});
+			this.MainMenu.Location = new System.Drawing.Point(0, 0);
+			this.MainMenu.Name = "MainMenu";
+			this.MainMenu.Size = new System.Drawing.Size(677, 24);
+			this.MainMenu.TabIndex = 8;
+			this.MainMenu.Text = "menuStrip1";
+			// 
+			// MenuInfo
+			// 
+			this.MenuInfo.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.MenuInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.MenuInfo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuInfoItemGeneral,
+            this.MenuInfoItemSplitter,
+            this.MenuInfoItemUniter});
+			this.MenuInfo.Name = "MenuInfo";
+			this.MenuInfo.ShowShortcutKeys = false;
+			this.MenuInfo.Size = new System.Drawing.Size(65, 20);
+			this.MenuInfo.Text = "Справка";
+			// 
+			// MenuInfoItemGeneral
+			// 
+			this.MenuInfoItemGeneral.Name = "MenuInfoItemGeneral";
+			this.MenuInfoItemGeneral.Size = new System.Drawing.Size(154, 22);
+			this.MenuInfoItemGeneral.Text = "Общее";
+			this.MenuInfoItemGeneral.Click += new System.EventHandler(this.MenuInfoItemGeneral_Click);
+			// 
+			// MenuInfoItemSplitter
+			// 
+			this.MenuInfoItemSplitter.Name = "MenuInfoItemSplitter";
+			this.MenuInfoItemSplitter.Size = new System.Drawing.Size(154, 22);
+			this.MenuInfoItemSplitter.Text = "Разделитель";
+			this.MenuInfoItemSplitter.Click += new System.EventHandler(this.MenuInfoItemSplitter_Click);
+			// 
+			// MenuInfoItemUniter
+			// 
+			this.MenuInfoItemUniter.Name = "MenuInfoItemUniter";
+			this.MenuInfoItemUniter.Size = new System.Drawing.Size(154, 22);
+			this.MenuInfoItemUniter.Text = "Объединитель";
+			this.MenuInfoItemUniter.Click += new System.EventHandler(this.MenuInfoItemUniter_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,14 +222,20 @@ namespace SplitterWin {
 			this.Controls.Add(this.UniterPanel);
 			this.Controls.Add(this.SplitterLabel);
 			this.Controls.Add(this.SplitterPanel);
+			this.Controls.Add(this.MainMenu);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MainMenuStrip = this.MainMenu;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "FileSplitter";
-			this.Load += new System.EventHandler(this.Form1_Load);
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.SplitterPanel.ResumeLayout(false);
 			this.SplitterPanel.PerformLayout();
 			this.UniterPanel.ResumeLayout(false);
 			this.UniterPanel.PerformLayout();
+			this.MainMenu.ResumeLayout(false);
+			this.MainMenu.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -199,6 +255,11 @@ namespace SplitterWin {
 		private System.Windows.Forms.TextBox OutFileNameTextBox;
 		private System.Windows.Forms.Button ChooseFilesButton;
 		private System.Windows.Forms.Button UniteButton;
+		private System.Windows.Forms.MenuStrip MainMenu;
+		private System.Windows.Forms.ToolStripMenuItem MenuInfo;
+		private System.Windows.Forms.ToolStripMenuItem MenuInfoItemGeneral;
+		private System.Windows.Forms.ToolStripMenuItem MenuInfoItemSplitter;
+		private System.Windows.Forms.ToolStripMenuItem MenuInfoItemUniter;
 	}
 }
 
